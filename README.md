@@ -1,6 +1,6 @@
 # Machenike Mini GTX Linux LED controller
 
-This shell executable is used to control the top LED on the Machenike Mini GTX PC.
+This shell executable is used to control the top LED on the [Machenike Mini GTX PC](https://global.machenike.com/pt-br/products/gtx-minipc).
 Unfortunately, the LEDs used on the chassis of this PC are not so common, so software
 like `openrgb` doesn't support it, and since there is no official Linux controller,
 I've built this one.
