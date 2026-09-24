@@ -70,6 +70,22 @@ Applying: Color=white, Brightness=50% (Hex: 00), Animation=off
 ```
 ---
 
+## Terminal User Interface (`tui.sh`)
+If you prefer an interactive, graphical menu directly in your terminal instead of typing command-line arguments, you can use the included TUI script.
+
+**Requirements:**
+This script relies on `whiptail`, which is pre-installed on most Linux distributions (including Fedora).
+
+**How to use it:**
+Make sure the script is executable, then run it:
+```sh
+chmod +x tui.sh
+./tui.sh
+```
+You can use your arrow keys, `Tab`, and `Enter` to navigate through the dialog boxes and select your target zone, colors, brightness, and animations visually.
+
+---
+
 ## HTTP API Server (`server.py`)
 To integrate this controller with web GUIs, external automations, or AI agents (like Open WebUI running in Docker), you can run the included FastAPI server to control the LEDs via standard HTTP POST requests.
 
@@ -119,4 +135,3 @@ curl -X POST "http://localhost:8314/api/rgb" \
 
 > [!IMPORTANT]
 > This software was written with the help of AI
-
