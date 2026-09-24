@@ -35,7 +35,7 @@ sudo ./run.sh --color red --zone power
 # Output:
 # Applying to Power LED: Color=red, Brightness=50%, Animation=static
 
-# All LED
+# All LEDs
 sudo ./run.sh --color red --zone all
 # Output:
 # Applying to Top LED: Color=red, Brightness=50%, Animation=static
@@ -67,6 +67,28 @@ sudo ./run.sh --color red --brightness 100 --mode static
 sudo ./run.sh --mode off
 # Output:
 Applying: Color=white, Brightness=50% (Hex: 00), Animation=off
+```
+---
+
+## HTTP API Server (`server.py`)
+To integrate this controller with web GUIs, external automations, or AI agents (like Open WebUI running in Docker), you can run the included FastAPI server to control the LEDs via standard HTTP POST requests.
+
+**Requirements:**
+```sh
+pip install fastapi uvicorn pydantic
+```
+
+**Running the server:**
+```sh
+python3 server.py
+```
+The API will be available on your local network at `http://0.0.0.0:8314`. You can view the auto-generated documentation by visiting `http://localhost:8314/docs`.
+
+**Example API Request:**
+```sh
+curl -X POST "http://localhost:8314/api/rgb" \
+     -H "Content-Type: application/json" \
+     -d '{"zone": "all", "color": "cyan", "brightness": 100, "mode": "breathe1"}'
 ```
 ---
 
