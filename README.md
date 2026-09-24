@@ -23,11 +23,23 @@ Since it deals with ACPI calls, you normally need to run it with `sudo`.
 
 ## What this software can do
 
-- Change the top LED color:
+- Change the LED colors:
 ```sh
-sudo ./run.sh --color red
+# Top LED only
+sudo ./run.sh --color red // or --zone top
 # Output:
-# Applying: Color=red, Brightness=50% (Hex: 27), Animation=static
+# Applying to Top LED: Color=red, Brightness=50%, Animation=static
+
+# Power LED only
+sudo ./run.sh --color red --zone power
+# Output:
+# Applying to Power LED: Color=red, Brightness=50%, Animation=static
+
+# All LED
+sudo ./run.sh --color red --zone all
+# Output:
+# Applying to Top LED: Color=red, Brightness=50%, Animation=static
+# Applying to Power LED: Color=red, Brightness=50%, Animation=static
 ```
 
 - Change brightness:
@@ -76,14 +88,6 @@ Applying: Color=white, Brightness=50% (Hex: 00), Animation=off
 - breathe2
 - breathe3
 - breathe4
-
----
-
-## What this software CANNOT (yet) do
-For now I was only able to control the top LED. The power LED seems to use
-some different parameter order, naming or something.
-
-It also does not have a GUI yet.
 
 ---
 
